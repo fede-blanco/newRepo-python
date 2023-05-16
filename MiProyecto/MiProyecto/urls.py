@@ -15,8 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from .views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Queremos que se vea en en el index de la barra de navegacion, el controlador es index y el nombre de la vista es index.html
+    path('', index, name = "index" ),
+    # Como 2do parametro del include s epone el nombre que se le dio a la app en su "urls"
+    path('cliente/', include("cliente.urls", "cliente")),
 ]

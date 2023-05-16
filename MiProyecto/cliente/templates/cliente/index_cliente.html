@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index_cliente.html</title>
+</head>
+<body>
+  <h1>Bienvenido  a CLIENTES</h1>
+  <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+    {% for cliente in clientes  %}
+    <div style="background-color: antiquewhite; padding: 0 1rem; width: auto;margin: 1rem; border-radius: .5rem;">
+      <h4>Nombre: {{ cliente.nombre }} {{ cliente.apellido }}</h4>
+      <h4>Nacimiento: {{ cliente.nacimiento }}</h4>
+      <h4>Pais: {{ cliente.pais_origen_id }}</h4>
+    </div>
+    {% endfor %}
+  </div>
+
+  <a href="{% url 'index' %}">Click para ir al INDEX PRINCIPAL</a>
+</body>
+</html>
